@@ -73,10 +73,13 @@ function App() {
       const formData = new FormData();
       formData.append("image", imageBlob, "captured.jpg");
 
-      const response = await fetch("http://localhost:3001/verify", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://8d3vd4skk9.execute-api.us-east-1.amazonaws.com/verify",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       const data = await response.json();
 
